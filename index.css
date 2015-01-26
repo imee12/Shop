@@ -1,0 +1,11 @@
+section, aside {
+  display: inline-block;
+}
+
+section {
+  width: 75%;
+}
+
+aside {
+  width: 15%;
+}
