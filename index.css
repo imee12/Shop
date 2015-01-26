@@ -9,3 +9,24 @@ section {
 aside {
   width: 15%;
 }
+
+header {
+  background-image: url("images/forever35loser.jpg");
+  height: 115px;
+}
+
+img {
+  width: 200px;
+
+}
+
+article {
+  display: inline-block;
+  width: 20%;
+  vertical-align: top;
+  padding: 10px;
+}
+
+p{
+  width: 100px;
+}
