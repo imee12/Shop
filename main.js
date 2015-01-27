@@ -24,16 +24,16 @@ var productPage = {
 
   createProduct: function(){
     var newProduct = {
-      product: $('.box input [name="product"]').val(),
-      image: $('box input[name="image"]').val(),
-      description: $('box textarea[name="description"]').val(),
-      price: $('box input[name="price"]').val(),
+      name: $('.box input[name="name"]').val(),
+      image: $('.box input[name="image"]').val(),
+      description: $('.box textarea[name="description"]').val(),
+      price: $('.box input[name="price"]').val(),
 
     };
 
-    products.push(NewProduct);
+    products.push(newProduct);
 
-    blogProduct.renderPost(newProduct, posts.indexOf(newProduct));
+    productPage.renderProduct(newProduct, products.indexOf(newProduct));
 
     $('.box input').val('');
     $('.box textarea').val('');
