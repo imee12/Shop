@@ -3,7 +3,7 @@ var templates = {};
 templates.product = [
   "<article data-index= '<%= idx %>'>",
   "<h2><%= name %></h2>",
-  "<img><%= image %></img>",
+  "<img src=<%=image%> />",
   "<p><%= description %></p>",
   "<blockquote><%= price %><blockquote>",
   "<p><button class='deletePost'>Delete</button></p>",
