@@ -6,40 +6,81 @@ var productPage = {
   },
 
   initStyling: function() {
-    console.log("called init styling");
-   productPage.addAllProducts(products);
+    //console.log("called init styling");
+   productPage.renderAllProducts(products);
  },
 
  initEvents: function() {
-   console.log("called init events");
-  },
-  //addPost: function (product, index, array){
+   //console.log("called init events");
+   $('.box form').on('submit', function (){
+     event.preventDefault();
+     productPage.createProduct();
 
-  //  var compiled = _.template(templates.post);
-  addProduct: function(product, index, array) {
-    $("section").append(
-      "<article>" +
-      "<h2>" + product.name + "</h2>" +
-      "<img src='" + product.image + "'>" +
-      "<p>" + product.description + "</p>" +
-      "<blockquote>" + product.price + "<blockquote>" +
-      "</article>"
-  );
+   });
 
-},
+   $('section').on('click', '.deletePost', productPage.deletePost);
 
- addAllProducts: function (productsData) {
-       productsData.forEach(productPage.addProduct);
   },
 
+  createProduct: function(){
+    var newProduct = {
+      product: $('.box input [name="product"]').val(),
+      image: $('box input[name="image"]').val(),
+      description: $('box textarea[name="description"]').val(),
+      price: $('box input[name="price"]').val(),
+
+    };
+
+    products.push(NewProduct);
+
+    blogProduct.renderPost(newProduct, posts.indexOf(newProduct));
+
+    $('.box input').val('');
+    $('.box textarea').val('');
+
+  },
+    updatePost: function () {
+
+    },
+
+    deletePost: function (event) {
+
+      var postIndex= $(this).closest('article').data('index');
+
+    //post.splice(postIndex, 1;)
+      $(this).closest('article').remove();
+
+    },
+
+
+    renderProduct: function(product, index, array) {
+      product.idx = index;
+      var compiled = _.template(templates.product);
+
+      $("section").prepend(compiled(product));
+    },
+
+    //$("section").append(
+  //  "<article>" +
+    //  "<h2>" + product.name + "</h2>" +
+    //  "<img src='" + product.image + "'>" +
+      //"<p>" + product.description + "</p>" +
+    //  "<blockquote>" + product.price + "<blockquote>" +
+      //"</article>"
+//  );
+
+//},
+
+    renderAllProducts: function (allProducts) {
+
+      // productsData.forEach(productPage.addProduct);
+      _.each(allProducts, productPage.renderProduct)
+    }
+
+  };
 
 
 
-
-
-
-
-};
 
 $(document).ready(function() {
   productPage.init();
