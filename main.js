@@ -40,12 +40,38 @@ var productPage = {
 
   },
     updateProduct: function () {
+        event.preventDefault();
 
-      var productIndex = $(this).closest('article').data('index');
+        $(".form").css({"display": "block"})
+      //  $(this).css({"width": "99%", "font-size": "25px"});
+      //  var editProduct = {
+        //  name: $('form input[name="name"]').val(),
+        //  image: $('form input[name="image"]').val(),
+        //  description: $('form input[name="description"]').val(),
+        //  price: $('form input[name="price"]').val(),
+        //};
 
 
 
-    },
+        //products.push(editProduct);
+
+      //  productPage.renderProduct(editProduct, products.indexOf(editProduct));
+
+
+
+//      $('form input').val('');
+  //    $('form textarea').val('');
+      //$(this).closest('article').add();
+      //products.splice(editProductIndex, 1, editProduct);
+
+    //
+
+    //var editProductIndex = products.indexOf(editProduct);
+
+
+    //  products.splice(editProductIndex, 1, editProduct);
+
+  //  },
 
 
 
@@ -54,7 +80,7 @@ var productPage = {
     //  $(this).closest('article').add()
 
 
-  //  },
+    },
 
     deleteProduct: function (event) {
 

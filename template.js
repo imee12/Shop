@@ -7,12 +7,14 @@ templates.product = [
   "<p><%= description %></p>",
   "<blockquote><%= price %><blockquote>",
   "<p><button class='deletePost'>Delete</button></p>",
+
+
 //  "<form action =''>"
-  "<form action=''>",
-  "<input type='text' value='<%= name %>'>",
-  "<input type='text' value='<%= image %>'>",
-  "<input type='text' value='<%= description %>'>",
-  "<input type='text' value='<%= price %>'>",
+//  "<form action=''>",
+//  "<input type='text' value='<%= name %>'>",
+//  "<input type='text' value='<%= image %>'>",
+  //"<input type='text' value='<%= description %>'>",
+  //"<input type='text' value='<%= price %>'>",
   "<p><button class='updatePost'>Update</button></p>",
 
 
@@ -31,3 +33,21 @@ templates.product = [
 //  "</article>"
 
 //].join("");
+
+
+
+
+//templates.updateProduct = [
+
+// "<form action=''>",
+//  "<input type='text' value='<%= name %>'>",
+//  "<input type='text' value='<%= image %>'>",
+//"<input type='text' value='<%= description %>'>",
+//"<input type='text' value='<%= price %>'>",
+//"<p><button class='updatePost'>Update</button></p>",
+
+
+//"<p><button class='updatePost'>Update</button></p>",
+
+///  "<form action =''
+//].join ("");
