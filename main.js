@@ -18,8 +18,8 @@ var productPage = {
 
    });
 
-   $('section').on('click', '.deletePost', productPage.deletePost);
-
+   $('section').on('click', '.deletePost', productPage.deleteProduct);
+   $('section').on('click', '.updatePost', productPage.updateProduct);
   },
 
   createProduct: function(){
@@ -39,13 +39,26 @@ var productPage = {
     $('.box textarea').val('');
 
   },
-    updatePost: function () {
+    updateProduct: function () {
+
+      var productIndex = $(this).closest('article').data('index');
+
+
 
     },
 
-    deletePost: function (event) {
 
-      var postIndex= $(this).closest('article').data('index');
+
+
+    //  products.splice(productIndex, 1);
+    //  $(this).closest('article').add()
+
+
+  //  },
+
+    deleteProduct: function (event) {
+
+      var productIndex= $(this).closest('article').data('index');
 
     //post.splice(postIndex, 1;)
       $(this).closest('article').remove();
