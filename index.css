@@ -45,6 +45,16 @@ h2 {
   font-size: 25px;
 }
 
-.form {
+.updateform {
+  display: none;
+}
+
+
+.transparent {
+background-color:#7f7f7f;
+background:rgba(0,0,0,0.5);
+}
+
+.hide {
   display: none;
 }

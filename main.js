@@ -42,7 +42,15 @@ var productPage = {
     updateProduct: function () {
         event.preventDefault();
 
-        $(".form").css({"display": "block"})
+
+
+        $(".updateform").toggle();
+        $(".box").toggle();
+        $("body").addClass(".transparent");
+
+
+        ///$(".form").css({"display": "block"});
+
       //  $(this).css({"width": "99%", "font-size": "25px"});
       //  var editProduct = {
         //  name: $('form input[name="name"]').val(),
