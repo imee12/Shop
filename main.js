@@ -20,6 +20,13 @@ var productPage = {
 
    $('section').on('click', '.deletePost', productPage.deleteProduct);
    $('section').on('click', '.updatePost', productPage.updateProduct);
+
+   $('.updateform').on('submit', function (){
+     event.preventDefault();
+    // productPage.updateProduct();
+
+   });
+
   },
 
   createProduct: function(){
@@ -35,8 +42,7 @@ var productPage = {
 
     productPage.renderProduct(newProduct, products.indexOf(newProduct));
 
-    $('.box input').val('');
-    $('.box textarea').val('');
+
 
   },
     updateProduct: function () {
@@ -52,32 +58,34 @@ var productPage = {
         ///$(".form").css({"display": "block"});
 
       //  $(this).css({"width": "99%", "font-size": "25px"});
-      //  var editProduct = {
-        //  name: $('form input[name="name"]').val(),
-        //  image: $('form input[name="image"]').val(),
-        //  description: $('form input[name="description"]').val(),
-        //  price: $('form input[name="price"]').val(),
-        //};
+       var updateProduct = {
+
+
+         name: $('form input[name="name"]').val(),
+        image: $('form input[name="image"]').val(),
+        description: $('form input[name="description"]').val(),
+          price: $('form input[name="price"]').val(),
+        };
 
 
 
-        //products.push(editProduct);
+        //products.push(updateProduct);
 
-      //  productPage.renderProduct(editProduct, products.indexOf(editProduct));
+    //  productPage.renderProduct(updateProduct, products.indexOf(updateProduct));
 
 
 
-//      $('form input').val('');
-  //    $('form textarea').val('');
+    $('form input').val('');
+      $('form textarea').val('');
       //$(this).closest('article').add();
       //products.splice(editProductIndex, 1, editProduct);
 
     //
 
-    //var editProductIndex = products.indexOf(editProduct);
+  //  var updateProductIndex = products.indexOf(updateProduct);
+  var updateProductIndex= $(this).closest('article').data('index');
 
-
-    //  products.splice(editProductIndex, 1, editProduct);
+      products.splice(updateProductIndex, 1, updateProduct);
 
   //  },
 
