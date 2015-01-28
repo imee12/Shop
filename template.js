@@ -9,12 +9,12 @@ templates.product = [
   "<p><button class='deletePost'>Delete</button></p>",
 
 
-//  "<form action =''>"
+
 //  "<form action=''>",
 //  "<input type='text' value='<%= name %>'>",
 //  "<input type='text' value='<%= image %>'>",
-  //"<input type='text' value='<%= description %>'>",
-  //"<input type='text' value='<%= price %>'>",
+//  "<input type='text' value='<%= description %>'>",
+//  "<input type='text' value='<%= price %>'>",
   "<p><button class='updatePost'>Update</button></p>",
 
 

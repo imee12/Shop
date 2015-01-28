@@ -8,6 +8,7 @@ var productPage = {
   initStyling: function() {
     //console.log("called init styling");
    productPage.renderAllProducts(products);
+
  },
 
  initEvents: function() {
@@ -74,14 +75,18 @@ var productPage = {
 
 
 
-     products.push(updateProduct);
+    products.push(updateProduct);
 
-    productPage.renderProduct(updateProduct, products.indexOf(updateProduct));
 
-    var updateProductIndex = products.indexOf(updateProduct);
-    var updateProductIndex= $(this).closest('article').data('index');
+productPage.renderProduct(updateProduct, products.indexOf(updateProduct));
+   var updateProductIndex = products.indexOf(updateProduct);
+    var origProductIndex= $(".updateform").closest('article').data('index');
 
-       products.splice(updateProductIndex, 1, updateProduct);
+ products.splice(origProductIndex, 1, updateProduct);
+
+//products.push(updateProduct);
+
+
 
      });
 
