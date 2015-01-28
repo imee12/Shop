@@ -58,6 +58,11 @@ var productPage = {
         ///$(".form").css({"display": "block"});
 
       //  $(this).css({"width": "99%", "font-size": "25px"});
+       $(".updatebutton").click(function(event){
+         event.preventDefault();
+
+
+
        var updateProduct = {
 
 
@@ -69,25 +74,24 @@ var productPage = {
 
 
 
-        //products.push(updateProduct);
+     products.push(updateProduct);
 
-    //  productPage.renderProduct(updateProduct, products.indexOf(updateProduct));
+    productPage.renderProduct(updateProduct, products.indexOf(updateProduct));
 
+    var updateProductIndex = products.indexOf(updateProduct);
+    var updateProductIndex= $(this).closest('article').data('index');
 
+       products.splice(updateProductIndex, 1, updateProduct);
 
-    $('form input').val('');
-      $('form textarea').val('');
+     });
+
       //$(this).closest('article').add();
       //products.splice(editProductIndex, 1, editProduct);
 
     //
 
-  //  var updateProductIndex = products.indexOf(updateProduct);
-  var updateProductIndex= $(this).closest('article').data('index');
-
-      products.splice(updateProductIndex, 1, updateProduct);
-
-  //  },
+  //
+    },
 
 
 
@@ -96,7 +100,7 @@ var productPage = {
     //  $(this).closest('article').add()
 
 
-    },
+
 
     deleteProduct: function (event) {
 
@@ -112,8 +116,6 @@ var productPage = {
       product.idx = index;
       var compiled = _.template(templates.product);
 
-      $("section").prepend(compiled(product));
-    },
 
     //$("section").append(
   //  "<article>" +
@@ -124,7 +126,9 @@ var productPage = {
       //"</article>"
 //  );
 
-//},
+  $("section").prepend(compiled(product));
+
+},
 
     renderAllProducts: function (allProducts) {
 
