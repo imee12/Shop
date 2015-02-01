@@ -15,7 +15,7 @@ templates.product = [
 //  "<input type='text' value='<%= image %>'>",
 //  "<input type='text' value='<%= description %>'>",
 //  "<input type='text' value='<%= price %>'>",
-  "<p><button class='updatePost'>Update</button></p>",
+  "<p><button class='updateProduct'>Update</button></p>",
 
 
   //"<p><button class='updatePost'>Update</button></p>",
@@ -24,30 +24,13 @@ templates.product = [
   "</article>"
 ].join ("");
 
-//templates.sidebar = [
-//  "<article>",
-  //"<h2><%= name %></h2>"
-//  "<img><%= image %></img>"
-//  "<p><%= description %></p>"
-//  "<blockquote><%= price %><blockquote>"
-//  "</article>"
+templates.updateProduct = [
 
-//].join("");
-
-
-
-
-//templates.updateProduct = [
-
-// "<form action=''>",
-//  "<input type='text' value='<%= name %>'>",
-//  "<input type='text' value='<%= image %>'>",
-//"<input type='text' value='<%= description %>'>",
-//"<input type='text' value='<%= price %>'>",
-//"<p><button class='updatePost'>Update</button></p>",
-
-
-//"<p><button class='updatePost'>Update</button></p>",
-
-///  "<form action =''
-//].join ("");
+    "<div class='updateForm'>",
+    "<p><input type='text' class='editProduct' value='<%= name %>'></p>",
+    "<p><input type='text' class='editImage' value='<%= image %>'></p>",
+    "<p><input type='text' class='editDescription' value='<%= description %>'></p>",
+    "<p><input type='text' class='editPrice' value='<%= price %>'></p>",
+    "<button class='editWholePost'>Edit Form</button>",
+   "</div>"
+   ].join ("");

@@ -45,7 +45,7 @@ h2 {
   font-size: 25px;
 }
 
-.updateform {
+.updateForm {
   display: none;
 }
 
@@ -53,6 +53,10 @@ h2 {
 .transparent {
 background-color:#7f7f7f;
 background:rgba(0,0,0,0.5);
+}
+
+.active {
+  display: block;
 }
 
 .hide {
