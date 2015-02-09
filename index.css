@@ -62,3 +62,7 @@ background:rgba(0,0,0,0.5);
 .hide {
   display: none;
 }
+
+.updateform {
+  display: none;
+}
