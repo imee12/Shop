@@ -1,3 +1,8 @@
+$(document).ready(function() {
+  productPage.init();
+
+});
+
 var productPage = {
 
 init: function() {
@@ -8,24 +13,47 @@ init: function() {
 
 initStyling: function() {
     console.log("called init styling");
-    productPage.renderProduct();
-    productPage.updateProductTemplate();
+   productPage.renderAllProducts();
+//  productPage.updateProduct();
 },
 
 initEvents: function() {
+
+////THIS IS TO CREATE A PRODUCT ////////
     console.log("called init events");
     $('.box form').on('submit', function (){
      event.preventDefault();
      productPage.createProduct();
+});
+
+///THIS IS TO DELETE PRODUCT///////
+$('section').on('click', '.deletePost', productPage.deleteProduct);
+
+///////// THIS IS TO UPDATE PRODUCT////////////
+
+
+$('.updateProduct').click(function(event){
+  console.log("update button works");
+  event.preventDefault();
+$(".updateForm").addClass("active");
+
 
 });
 
-$('section').on('click', '.deletePost', productPage.deleteProduct);
-$('section').on('click', '.updatePost', productPage.updateProduct);
-$('section').on('click', '.updateEntirePost', productPage.updateProduct);
+///////////////THIS DISPLAY UPDATED PRODUCT//////////
+
+$('.editWholePost').click(function(event){
+  console.log("edit button works");
+  event.preventDefault();
+
+  $('.updateForm').hide();
+  productPage.updateProduct();
 
 
+});
 },
+
+
 
 createProduct: function(){
     var newProduct = {
@@ -37,32 +65,30 @@ createProduct: function(){
 
     products.push(newProduct);
 
-    $('.box input').val('');
-    $('box textarea').val('');
+  //  $('.box input').val('');
+    //$('box textarea').val('');
 
-
+    productPage.renderProduct();
 },
+
 updateProduct: function () {
 
-      $('.updateProduct').click(function(event){
-        event.preventDefault();
-      $(".updateForm").addClass("active");
 
-///how to i get current clicked product's info to fill template box?///
+
 
       var thisIndex = $(this).closest('article').data('index');
       var updatedProduct = {
-        title: $(this).closest('article').find('input.editProduct').val(),
-        image: $(this).closest('article').find('input.editImage').val(),
-        description: $(this).closest('article').find('input.editAuthor').val(),
-        price: $(this).closest('article').find('input.editPrice').val(),
+        title: $(this).closest('article').find('input[name=editProduct]').val(),
+        image: $(this).closest('article').find('input[name=editImage]').val(),
+        description: $(this).closest('article').find('input[name=editDescription]').val(),
+        price: $(this).closest('article').find('input[name=editPrice]').val(),
 };
 
 
         products.splice(thisIndex, 1, updatedProduct);
-        //productPage.renderAllProducts();
+       productPage.renderAllProducts();
 
-});
+
 },
 
 
@@ -80,17 +106,17 @@ renderProduct: function(product, index, array) {
 
 
 
-      _.each(products, function (currentItem, Index, Array){
-        currentItem.idx = index;
+      _.each(products, function (currentItem, index, array){
+        currentItem.index = index;
         var html ="";
         var productTmpl = _.template(templates.product);
         html += productTmpl(currentItem);
 
-        $("section").append(html);
-        console.log(html);
+      //  $("section").append(html);
+      ////  console.log(html);
       });
 
-
+productPage.renderAllProducts;
       },
 
 
@@ -99,36 +125,26 @@ renderProduct: function(product, index, array) {
 
 renderAllProducts: function (allProducts) {
 var productTmpl = _.template(templates.product);
-var html = "";
+var markup = "";
 
-    _.each(products, function (currentItem, Index, Array){
-
-      html += productTmpl(currentItem);
+    _.each(products, function (currentItem, index, array){
+    ///  currentItem.index = index;
+      markup += productTmpl(currentItem);
 });
-      $("section").append(html);
-      console.log(html);
+      $("section").html(markup);
+      console.log(markup);
 
     },
 
-updateProductTemplate: function () {
-  var updateTmpl = _.template(templates.updateProduct);
-  var html = "";
-  _.each(products, function (currentItem, index, array){
-  html += updateTmpl(currentItem);
-});
- $("section").append(html);
-console.log(html);
-},
+// updateProduct: function () {
+//   var updateTmpl = _.template(templates.product);
+//   var html = "";
+//   _.each(products, function (currentItem, index, array){
+//   html += updateTmpl(currentItem);
+// });
+//  $("section").append(html);
+// console.log(html);
+// },
 
 
-//}
-
-  };
-
-
-
-
-$(document).ready(function() {
-  productPage.init();
-
-});
+};

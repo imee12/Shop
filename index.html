@@ -5,6 +5,27 @@
   <title>Forever 35</title>
   <link rel="stylesheet" href="index.css">
 </head>
+<!---<script id="postTmpl" type="html/template">
+<% _.each(products, function(currentElement, index, array) { %>
+  <article data-index='<%= index %>'>
+  <h3><%= currentElement.name %></h3>
+  <img src='<%= currentElement.photo %>'>
+  <p> <%= currentElement.description %></p>
+  <p> <%= currentElement.price %></p>
+  <p><button class='deletePost'>Delete</button><button class="showEditForm">Edit</button></p>
+
+  <div class="form">
+    <div><input type="text" class="editTitle" value="<%= currentElement.title %>"></div>
+    <div><input type="text" class="editContent" value="<%= currentElement.content %>"></div>
+    <div><input type="text" class="editAuthor" value="<%= currentElement.author %>"></div>
+    <div><input type="text" class="editPhoto" value="<%= currentElement.photo %>"></div>
+    <button class="editWholePost">Edit Form</button>
+   </div>
+  </article>
+<% }); %>
+</script>---->
+
+
 <body>
 <header>
 
@@ -16,7 +37,10 @@
 
 
 </section>
+
+
 <aside>
+
 <div class="box">
   <form action="">
   <h4><label for ="name">Product</label>
@@ -54,7 +78,7 @@
   <script src="bower_components/jquery/dist/jquery.js"></script>
   <script src="bower_components/underscore/underscore.js"></script>
   <script src="data.js"></script>
-  <script src="template.js"></script>
+//  <script src="template.js"></script>
   <script src="main.js"></script>
 </body>
 
