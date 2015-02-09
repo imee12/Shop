@@ -10,19 +10,19 @@ templates.product = [
   "<p><button class='updateProduct'>Update</button></p>",
 
 
-  //"</article>",
+  "</article>"
 
 
-    "<div class='updateForm'>",
-//   "<article data-index= '<%= index %>'>",
-    "<form action =>",
-    "<p><input type='text' name='editProduct' value='<%= name %>'></p>",
-    "<p><input type='text' name='editImage' value='<%= image %>'></p>",
-    "<p><input type='text' name='editDescription' value='<%= description %>'></p>",
-    "<p><input type='text' name='editPrice' value='<%= price %>'></p>",
-    "<button class='editWholePost'>Edit Form</button>",
-   "</article>",
-   "</div>"
+//     "<div class='updateForm'>",
+// //   "<article data-index= '<%= index %>'>",
+//     "<form action =>",
+//     "<p><input type='text' name='editProduct' value='<%= name %>'></p>",
+//     "<p><input type='text' name='editImage' value='<%= image %>'></p>",
+//     "<p><input type='text' name='editDescription' value='<%= description %>'></p>",
+//     "<p><input type='text' name='editPrice' value='<%= price %>'></p>",
+//     "<button class='editWholePost'>Edit Form</button>",
+//    "</article>",
+  //  "</div>"
  ].join ("");
    //  "<form action=''>",
    //  "<input type='text' value='<%= name %>'>",

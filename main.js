@@ -1,7 +1,4 @@
-$(document).ready(function() {
-  productPage.init();
 
-});
 
 var productPage = {
 
@@ -14,7 +11,7 @@ init: function() {
 initStyling: function() {
     console.log("called init styling");
    productPage.renderAllProducts(products);
-//  productPage.updateProduct();
+ //productPage.updateProduct();
 },
 
 initEvents: function() {
@@ -26,38 +23,31 @@ initEvents: function() {
      productPage.createProduct();
 });
 
+$('.box form').on('submit', function(event){
+  event.preventDefault();
+  productPage.createProduct();
+
+
+});
+
+
 ///THIS IS TO DELETE PRODUCT///////
-$('section').on('click', '.deletePost', productPage.deleteProduct);
+$('.mainContent').on('click', '.deletePost', productPage.deleteProduct);
 
 ///////// THIS IS TO UPDATE PRODUCT////////////
 
 
-$('section').on('click', '.showEditForm', function (event){
+$('.mainContent').on('click', '.showEditForm', function (event){
   $(this).closest('article').find('.updateform').show();
 
 
 });
 
 
-$('.updateProduct').click(function(event){
-  console.log("update button works");
-  event.preventDefault();
-////$(".updateForm").addClass("active");
-///productPage.updateProduct();
-
-});
-
-///////////////THIS DISPLAY UPDATED PRODUCT//////////
-
-$('.editWholePost').click(function(event){
-  console.log("edit button works");
-  event.preventDefault();
-
-  $('.updateForm').hide();
-  productPage.updateProduct();
+$('.mainContent').on('click', '.editWholePost', productPage.updateProduct);
 
 
-});
+
 },
 
 
@@ -72,28 +62,25 @@ createProduct: function(){
 
     products.push(newProduct);
 
-  //  $('.box input').val('');
-    //$('box textarea').val('');
-
     productPage.renderAllProducts(products);
+
+     $('.box input').val('');
+      $('box textarea').val('');
 },
 
 updateProduct: function () {
 
-
-
-
       var thisIndex = $(this).closest('article').data('index');
       var updatedProduct = {
-        title: $(this).closest('article').find('input[name=editProduct]').val(),
-        image: $(this).closest('article').find('input[name=editImage]').val(),
-        description: $(this).closest('article').find('input[name=editDescription]').val(),
-        price: $(this).closest('article').find('input[name=editPrice]').val(),
+        title: $(this).closest('article').find('input.editProduct').val(),
+        image: $(this).closest('article').find('input.editImage').val(),
+        description: $(this).closest('article').find('input.editDescription').val(),
+        price: $(this).closest('article').find('input.editPrice').val(),
 };
 
 
       products.splice(thisIndex, 1, updatedProduct);
-       productPage.renderAllProducts();
+       productPage.renderAllProducts(products);
 
 
 },
@@ -104,7 +91,7 @@ deleteProduct: function (event) {
       var productIndex=             $(this).closest('article').data('index');
 
 
-      $(this).closest('article').remove();
+    //  $(this).closest('article').remove();
       products.splice(productIndex,1);
       productPage.renderAllProducts();
     },
@@ -127,7 +114,11 @@ deleteProduct: function (event) {
 // productPage.renderAllProducts;
 //       },
 
+compileTmpl: function (data, tmpl){
 
+  var tmpl= _.template(tmpl);
+  return tmp(data);
+},
 
 
 
@@ -136,7 +127,7 @@ renderAllProducts: function (allProducts) {
   var markup = compiledTmpl(allProducts);
   console.log(markup);
 
-  $("body").html(markup);
+  $(".mainContent").html(markup);
 
 }
 // var productTmpl = _.template(templates.product);
@@ -160,3 +151,8 @@ renderAllProducts: function (allProducts) {
 //  $("section").append(html);
 // console.log(html);
 // },
+
+$(document).ready(function() {
+  productPage.init();
+
+});
